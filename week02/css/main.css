@@ -1,0 +1,64 @@
+.circle{
+    background-color: aqua;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation-name: zoom;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    z-index: -1;
+}
+
+.square{
+    width: 300px;
+    height: 300px;
+    background-color: aqua;
+    transition: transform 100ms ease-in-out;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20vh;
+}
+
+.square:hover{
+    transform: perspective(1000px) rotateY(30deg) rotatex(5deg);
+}
+
+h1{
+    font-size: 100px;
+    text-transform: uppercase;
+    background: -webkit-linear-gradient(105deg, #0006A7 0%, #00CCFF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+}
+
+@keyframes zoom {
+    0%{
+        transform: scale(2);
+        top: 0;
+        left: 0;
+        filter: blur(20px);
+    }
+    25%{
+        transform: scale(2.5);
+        top: 45vh;
+        left: 45vw;
+        filter: blur(50px);
+    }
+    75%{
+        transform: scale(2);
+        top: 0vh;
+        left: 70vw;
+        filter: blur(40px);
+    }
+    100%{
+        transform: scale(2);
+        top: 0;
+        left: 0;
+        filter: blur(30px);
+    }
+}
