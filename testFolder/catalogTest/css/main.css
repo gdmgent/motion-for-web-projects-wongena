@@ -32,7 +32,7 @@ h2{
 .catalogImages{
     height: 400px;
     width: auto;
-
+    z-index: 1;
     transition: transform 200ms ease-in-out;
 }
 
@@ -49,7 +49,7 @@ h2{
   }
 
 .catalogImages:hover{
-    transform: perspective(1000px) rotateZ(-20deg) rotateY(20deg) rotateX(15deg) scale(2.5);
+    transform: perspective(1000px) rotateZ(-10deg) rotateY(20deg) rotateX(20deg) scale(1.75);
 }
 
 .animated-background {
@@ -60,4 +60,31 @@ h2{
     left: 0;
     z-index: -1;
     background-image: linear-gradient(105deg, #1d2e36, #4f6270);
+  }
+
+.discoverNowBtn{
+    color: white;
+    text-decoration: none;
+    background-color: #1d2e36;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    animation: pulseBtn 2s infinite;
+}
+
+  @keyframes pulseBtn {
+    0% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgb(29, 46, 54, 0.7);
+    }
+    
+    70% {
+      transform: scale(1);
+      box-shadow: 0 0 0 10px rgb(29, 46, 54, 0);
+    }
+    
+    100% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgb(29, 46, 54, 0);
+    }
   }
