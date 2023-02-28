@@ -1,1 +1,1 @@
-[![Open website](https://www.gdm.gent/motion-for-web-projects-wongena/)
+https://www.gdm.gent/motion-for-web-projects-wongena/
