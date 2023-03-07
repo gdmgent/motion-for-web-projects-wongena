@@ -20,8 +20,8 @@
      height: var(--cube-width);
      line-height: var(--cube-width);
      text-align: center;
-     box-shadow: inset 0px 0px 0px 1px rgba(10, 0, 0, 0.8);
-     background: rgba(249, 185, 242, 0.8);
+     box-shadow: inset 0px 0px 0px 1px rgba(10, 0, 0, 0.5);
+     background: rgba(248, 29, 0, 0.8);
      display: block;
      position: absolute;
   }
