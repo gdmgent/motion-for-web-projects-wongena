@@ -1,0 +1,152 @@
+:root{
+    --base-delay: 1000ms;
+    --sc1-duration: 4s;
+}
+
+body{
+    background-color: #F5F4F6 !important;
+    overflow: hidden;
+}
+
+/* scene 1 */
+
+.sc1bar{
+    width: 100vw;
+    transform: skewY(-30deg);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.sc1bar1{
+    height: 150vh;
+    background: linear-gradient(0deg, #3A3A3E 50%, #B3B2B3 50%);
+    animation: slideTopToBottom cubic-bezier(0.16, 0.85, 0.66, 0.1) forwards var(--base-delay);
+    animation-duration: calc(var(--sc1-duration) + 0.3s);
+}
+
+.sc1bar2{
+    height: 120vh;
+    background: linear-gradient(190deg, #E01431 50%, #303136 50%);
+    animation: slideTopToBottom cubic-bezier(0.16, 0.85, 0.66, 0.1) forwards calc(var(--base-delay) + 100ms);
+    animation-duration: calc(var(--sc1-duration) + 0.2s);
+}
+
+.sc1bar3{
+    height: 100vh;
+    background: #D30725;
+    animation: slideTopToBottom cubic-bezier(0.16, 0.85, 0.66, 0.1) forwards calc(var(--base-delay) + 200ms);
+    animation-duration: calc(var(--sc1-duration) + 0.1s);
+}
+
+.sc1HeadTitle{
+    font-size: 100px;
+    animation: slideTopToBottom cubic-bezier(0.01, 0.94, 0.82, 0.03) forwards calc(var(--base-delay) + 200ms);
+    left: 7vw;
+    margin-top: 100px;
+    text-transform: uppercase;
+    font-weight: bold;
+    animation-duration: calc(var(--sc1-duration));
+}
+
+.sc1SubTitle{
+    font-size: 30px;
+    color: #3A3A3E;
+    animation: slideTopToBottom cubic-bezier(0.01, 0.94, 0.82, 0.03) forwards calc(var(--base-delay) + 200ms);
+    left: 7.5vw;
+    margin-top: 230px;
+    animation-duration: calc(var(--sc1-duration));
+}
+
+
+/* scene 2 */
+
+.sc2bar{
+    width: 100vw;
+    transform: skewY(30deg);
+    position: absolute;
+    top: -400%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.sc2bar1{
+    height: 180vh;
+    background: linear-gradient(180deg, #C6112C 50%, #232428 50%);
+    animation: slideTopToBottom cubic-bezier(0.16, 0.85, 0.66, 0.1) forwards;
+    animation-delay:  calc(var(--base-delay) + var(--sc1-duration) - 1.5s);
+    animation-duration: calc(var(--sc1-duration));
+}
+
+.sc2bar2{
+    height: 140vh;
+    background: #fff;
+    animation: slideTopToBottom cubic-bezier(0.16, 0.85, 0.66, 0.1) forwards;
+    animation-delay: calc(var(--base-delay) + var(--sc1-duration) - 1.4s);
+    animation-duration: calc(var(--sc1-duration) + 0.2s);
+}
+
+.sc2HeadTitle{
+    color: #303136;
+    font-size: 100px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transform: skewY(0deg);
+    margin-top: 48vh;
+    text-align: center;
+    animation: slideTopToBottom cubic-bezier(0.01, 0.94, 0.82, 0.03) forwards;
+    animation-delay: calc(var(--base-delay) + var(--sc1-duration) - 1.4s);
+    animation-duration: calc(var(--sc1-duration) + 0.2s);
+}
+
+
+@keyframes slideTopToBottom {
+    0% {
+      top: -300%;
+    }
+    100% {
+      top: 300%;
+    }
+  }
+
+
+/* others */
+.goHomeContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.goHomeContainer a{
+    text-decoration: none;
+    color: #B3B2B3;
+    font-weight: bold;
+    font-size: 50px;
+    transition: all 0.3s ease-in;
+    animation: linkAppear 9s forwards;
+    filter: blur(1px);
+}
+
+.goHomeContainer a:hover{
+    color: #232428;
+    transform: scale(1.05);
+    filter: blur(0px);
+}
+
+@keyframes linkAppear {
+    0% {
+        opacity: 0;
+    }
+    80% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+  }
