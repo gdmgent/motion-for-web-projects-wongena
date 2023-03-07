@@ -1,5 +1,7 @@
 :root {
-    --cube-width: 50vh
+    --cube-width: 50vh;
+    --plain-color: rgba(249, 185, 242, 0.8);
+    --top-color: rgb(106, 255, 0);
   }
   
   .cube {
@@ -11,7 +13,6 @@
     left: 50%;
     margin-left: calc(var(--cube-width) / -2);
     margin-top: calc(var(--cube-width) / -2);
-
     animation: rotate 10s linear infinite;
   }
   
@@ -20,38 +21,42 @@
      height: var(--cube-width);
      line-height: var(--cube-width);
      text-align: center;
-     box-shadow: inset 0px 0px 0px 1px rgba(10, 0, 0, 0.5);
-     background: rgba(52, 73, 106, 0.8);
+     box-shadow: inset 0px 0px 0px 1px rgba(10, 0, 0, 0.8);
      display: block;
      position: absolute;
+     border-radius: 50%;
   }
   
   .cube div.top {
-     transform: rotateX(90deg); 
-    margin-top: calc(var(--cube-width) / -2);
+     transform: rotateX(90deg) scaleX(0.15); 
+    background: var(--top-color);
   }
   
   .cube div.right {
      -webkit-transform: rotateY(90deg); 
     margin-left: calc(var(--cube-width) / 2);
+    background: var(--plain-color);
   }
   
   .cube div.bottom {
-     transform: rotateX(-90deg); 
-    margin-top: calc(var(--cube-width) / 2);
+     transform: rotateX(-90deg) scaleY(0.15); 
+    background: var(--top-color);
   }
   
   .cube div.left {
      transform: rotateY(-90deg); 
     margin-left: calc(var(--cube-width) / -2);
+    background: var(--plain-color);
   }
   
   .cube div.front {
      transform: translateZ(calc(var(--cube-width) / 2));
+     background: var(--plain-color);
   }
   
   .cube div.back {
-     transform: translateZ(calc(var(--cube-width) / -2)) rotateY(180deg);
+     transform: translateZ(calc(var(--cube-width) / -2));
+     background: var(--plain-color);
   }
   
   * {
@@ -64,11 +69,11 @@
      height: 100%;
   }
 
-  @keyframes rotate{
-    0%{
-      transform:rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    @keyframes rotate {
+        0% {
+        transform: rotateX(-15deg) rotateY(0deg);
+        }
+        100% {
+        transform: rotateX(-15deg) rotateY(360deg);
+        }
     }
-    100%{
-      transform:rotateX(360deg) rotateY(360deg) rotateZ(360deg);
-    }
-  }
