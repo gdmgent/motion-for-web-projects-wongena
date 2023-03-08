@@ -73,3 +73,21 @@ h2{
     font-style: italic;
     margin: 10px;
   }
+
+  @media only screen and (max-width: 600px) {
+    h1{
+      font-size: 45px;
+    }
+
+    h2{
+      font-size: 30px;
+    }
+
+    .categoryBox{
+      width: 80vw;
+    }
+
+    .categoryBox:hover .categoryBoxLinksContainer {
+      max-height: 500px; /* adjust this value to fit your content */
+    }
+}

@@ -150,3 +150,20 @@ body{
         opacity: 1;
     }
   }
+
+
+@media only screen and (max-width: 600px) {
+    .sc1HeadTitle{
+        margin-top: 25vh;
+    }
+    .sc1SubTitle{
+        display: none;
+    }
+    .sc2HeadTitle{
+        font-size: 60px;
+        margin-top: 40vh;
+    }
+    .goHomeContainer a{
+        font-size: 30px;
+    }
+}
