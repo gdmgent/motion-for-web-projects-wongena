@@ -1,0 +1,436 @@
+:root{
+    --animation-length: 300ms;
+    --delay-length: 2.2s;
+    --second-delay-length: 2.2s;
+    --primary-gray: #282830;
+    --secondary-gray: #a8aaac;
+}
+
+body{
+    background-color: #fff !important;
+    overflow: hidden;
+}
+
+.container{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rotateCanvas{
+    width: 80vw;
+    height: 60vh;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(../images/Yaris360/1.jpg);
+    animation: rotate90 var(--animation-length) linear forwards calc(var(--delay-length) * 2), rotate180 var(--animation-length) linear forwards calc(var(--animation-length) + var(--delay-length) * 2 + (var(--second-delay-length) * 2));
+}
+
+.GRLogo{
+    position: absolute;
+    top: 5vh;
+    right: 5vw;
+}
+
+.titleContainer{
+    position: absolute;
+    top: 5vh;
+    left: 5vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.Title{
+    color: var(--primary-gray);
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.subTitle{
+    color: var(--secondary-gray);
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.pointerContainer{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.pointer1{
+    position: absolute;
+    width: 25vw;
+    height: 5px;
+    background-color: var(--primary-gray);
+    top: 60vh;
+    left: 15vw;
+    animation: slideFromBottomToPositionPointer1sc1 var(--delay-length) linear forwards alternate 2,
+    slideFromBottomToPositionPointer1sc2 var(--second-delay-length) linear forwards alternate 2 calc(var(--delay-length) * 2 + var(--animation-length)),
+    slideFromBottomToPositionPointer1sc3 var(--second-delay-length) linear forwards calc(var(--delay-length) * 2 + var(--animation-length) + var(--second-delay-length) * 2);
+}
+
+.pointer2{
+    position: absolute;
+    width: 25vw;
+    height: 5px;
+    background-color: var(--primary-gray);
+    top: 30vh;
+    right: 20vw;
+    animation: slideFromBottomToPositionPointer2sc1 var(--delay-length) linear forwards alternate 2,
+    slideFromBottomToPositionPointer2sc2 var(--second-delay-length) linear forwards alternate 2 calc(var(--delay-length) * 2 + var(--animation-length)),
+    slideFromBottomToPositionPointer2sc3 var(--second-delay-length) linear forwards calc(var(--delay-length) * 2 + var(--animation-length) + var(--second-delay-length) * 2);
+}
+
+p{
+    position: absolute;
+    font-size: 1.2em;
+    color: var(--secondary-gray);
+}
+
+.textContainer p:first-child{
+    top: 70vh;
+    left: 10vw;
+    width: 15vw;
+    animation: slideFromBottomToPositionP1sc1 var(--delay-length) linear forwards alternate 2,
+    slideFromBottomToPositionP1sc2 var(--second-delay-length) linear forwards alternate 2 calc(var(--delay-length) * 2 + var(--animation-length)),
+    slideFromBottomToPositionP1sc3 var(--second-delay-length) linear forwards calc(var(--delay-length) * 2 + var(--animation-length) + var(--second-delay-length) * 2);
+
+}
+
+.textContainer p:first-child::after{
+    content: '';
+    animation: slideFromBottomToPositionP1sc1 var(--delay-length) linear forwards alternate 2,
+    slideFromBottomToPositionP1sc2 var(--second-delay-length) linear forwards alternate 2 calc(var(--delay-length) * 2 + var(--animation-length)),
+    slideFromBottomToPositionP1sc3 var(--second-delay-length) linear forwards calc(var(--delay-length) * 2 + var(--animation-length) + var(--second-delay-length) * 2);
+}
+
+.textContainer p:last-child{
+    top: 30vh;
+    right: 15vw;
+    width: 15vw;
+    animation: slideFromBottomToPositionP2sc1 var(--delay-length) linear forwards alternate 2,
+    slideFromBottomToPositionP2sc2 var(--second-delay-length) linear forwards alternate 2 calc(var(--delay-length) * 2 + var(--animation-length)),
+    slideFromBottomToPositionP2sc3 var(--second-delay-length) linear forwards calc(var(--delay-length) * 2 + var(--animation-length) + var(--second-delay-length) * 2);
+}
+
+.textContainer p:last-child::after{
+    content: '';
+    animation: slideFromBottomToPositionP2sc1 var(--delay-length) linear forwards alternate 2,
+    slideFromBottomToPositionP2sc2 var(--second-delay-length) linear forwards alternate 2 calc(var(--delay-length) * 2 + var(--animation-length)),
+    slideFromBottomToPositionP2sc3 var(--second-delay-length) linear forwards calc(var(--delay-length) * 2 + var(--animation-length) + var(--second-delay-length) * 2);
+}
+
+/* animation with 10 keyframes that changes the background image of rotateCanvas */
+@keyframes rotate90{
+    0%{
+        background-image: url(../images/Yaris360/1.jpg);
+    }
+    10%{
+        background-image: url(../images/Yaris360/2.jpg);
+    }
+    20%{
+        background-image: url(../images/Yaris360/3.jpg);
+    }
+    30%{
+        background-image: url(../images/Yaris360/4.jpg);
+    }
+    40%{
+        background-image: url(../images/Yaris360/5.jpg);
+    }
+    50%{
+        background-image: url(../images/Yaris360/6.jpg);
+    }
+    60%{
+        background-image: url(../images/Yaris360/7.jpg);
+    }
+    70%{
+        background-image: url(../images/Yaris360/8.jpg);
+    }
+    80%{
+        background-image: url(../images/Yaris360/9.jpg);
+    }
+    90%{
+        background-image: url(../images/Yaris360/10.jpg);
+    }
+    100%{
+        background-image: url(../images/Yaris360/10.jpg);
+    }
+}
+
+/* animation with 10 keyframes that changes the background image of rotateCanvas of the following images */
+@keyframes rotate180{
+    0%{
+        background-image: url(../images/Yaris360/11.jpg);
+    }
+    10%{
+        background-image: url(../images/Yaris360/12.jpg);
+    }
+    20%{
+        background-image: url(../images/Yaris360/13.jpg);
+    }
+    30%{
+        background-image: url(../images/Yaris360/14.jpg);
+    }
+    40%{
+        background-image: url(../images/Yaris360/15.jpg);
+    }
+    50%{
+        background-image: url(../images/Yaris360/16.jpg);
+    }
+    60%{
+        background-image: url(../images/Yaris360/17.jpg);
+    }
+    70%{
+        background-image: url(../images/Yaris360/18.jpg);
+    }
+    80%{
+        background-image: url(../images/Yaris360/19.jpg);
+    }
+    90%{
+        background-image: url(../images/Yaris360/19.jpg);
+    }
+    100%{
+        background-image: url(../images/Yaris360/19.jpg);
+    }
+}
+
+/* Animation scene 1 */
+
+@keyframes slideFromBottomToPositionPointer1sc1 {
+    0% {
+        top: 50vh;
+        opacity: 0;
+    }
+    10% {
+        top: 60vh;
+        opacity: 1;
+    }
+    100% {
+        top: 60vh;
+        opacity: 1;
+    }
+}
+
+@keyframes slideFromBottomToPositionPointer2sc1 {
+    0% {
+        top: 20vh;
+        opacity: 0;
+    }
+    10% {
+        top: 30vh;
+        opacity: 1;
+    }
+    100% {
+        top: 30vh;
+        opacity: 1;
+    }
+}
+
+@keyframes slideFromBottomToPositionP1sc1 {
+    0% {
+        top: 70vh;
+        opacity: 0;
+        content: "Topvermogen van 261 pk en 360 Nm"
+    }
+    10% {
+        top: 60vh;
+        opacity: 1;
+        content: "Topvermogen van 261 pk en 360 Nm"
+    }
+    100% {
+        top: 60vh;
+        opacity: 1;
+        content: "Topvermogen van 261 pk en 360 Nm"
+    }
+}
+
+@keyframes slideFromBottomToPositionP2sc1 {
+    0% {
+        top: 40vh;
+        opacity: 0;
+        content: "Uitgerust met de laatste versies van Android Auto en Apple CarPlay"
+    }
+    10% {
+        top: 30vh;
+        opacity: 1;
+        content: "Uitgerust met de laatste versies van Android Auto en Apple CarPlay"
+    }
+    100% {
+        top: 30vh;
+        opacity: 1;
+        content: "Uitgerust met de laatste versies van Android Auto en Apple CarPlay"
+    }
+}
+
+
+
+/* Animation scene 2 */
+
+@keyframes slideFromBottomToPositionPointer1sc2 {
+    0% {
+        top: 60vh;
+        left: 1vw;
+        opacity: 0;
+    }
+    10% {
+        top: 69vh;
+        left: 1vw;
+        opacity: 1;
+    }
+    100% {
+        top: 69vh;
+        left: 1vw;
+        opacity: 1;
+    }
+}
+
+@keyframes slideFromBottomToPositionPointer2sc2 {
+    0% {
+        top: 20vh;
+        right: 12vw;
+        opacity: 0;
+    }
+    10% {
+        top: 30vh;
+        right: 12vw;
+        opacity: 1;
+    }
+    100% {
+        top: 30vh;
+        right: 12vw;
+        opacity: 1;
+    }
+}
+
+@keyframes slideFromBottomToPositionP1sc2 {
+    0% {
+        top: 80vh;
+        left: 1vw;
+        opacity: 0;
+        content: "18-inch forgé lichtmetalen velgen"
+    }
+    10% {
+        top: 69vh;
+        left: 1vw;
+        opacity: 1;
+        content: "18-inch forgé lichtmetalen velgen"
+    }
+    100% {
+        top: 69vh;
+        left: 1vw;
+        opacity: 1;
+        content: "18-inch forgé lichtmetalen velgen"
+    }
+}
+
+@keyframes slideFromBottomToPositionP2sc2 {
+    0% {
+        top: 40vh;
+        right: 5vw;
+        opacity: 0;
+        content: "Zwart en rood Ultrasuede® stof met simili leder"
+    }
+    10% {
+        top: 29vh;
+        right: 5vw;
+        opacity: 1;
+        content: "Zwart en rood Ultrasuede® stof met simili leder"
+    }
+    100% {
+        top: 29vh;
+        right: 5vw;
+        opacity: 1;
+        content: "Zwart en rood Ultrasuede® stof met simili leder"
+    }
+}
+
+
+
+/* Animation scene 3 */
+
+@keyframes slideFromBottomToPositionPointer1sc3 {
+    0% {
+        top: 55vh;
+        left: 15vw;
+        opacity: 0;
+    }
+    10% {
+        top: 65vh;
+        left: 15vw;
+        opacity: 1;
+    }
+    100% {
+        top: 65vh;
+        left: 15vw;
+        opacity: 1;
+    }
+}
+
+@keyframes slideFromBottomToPositionPointer2sc3 {
+    0% {
+        top: 38vh;
+        right: 20vw;
+        opacity: 0;
+    }
+    10% {
+        top: 48vh;
+        right: 16vw;
+        opacity: 1;
+    }
+    100% {
+        top: 48vh;
+        right: 16vw;
+        opacity: 1;
+    }
+}
+
+@keyframes slideFromBottomToPositionP1sc3 {
+    0% {
+        top: 80vh;
+        left: 10vw;
+        opacity: 0;
+        content: "Race uitlaat systeem"
+    }
+    10% {
+        top: 64vh;
+        left: 10vw;
+        opacity: 1;
+        content: "Race uitlaat systeem"
+    }
+    100% {
+        top: 64vh;
+        left: 10vw;
+        opacity: 1;
+        content: "Race uitlaat systeem"
+    }
+}
+
+@keyframes slideFromBottomToPositionP2sc3 {
+    0% {
+        top: 60vh;
+        right: 5vw;
+        opacity: 0;
+        content: "WRC-geinspireerde GR-FOUR vierwielaandrijving"
+    }
+    10% {
+        top: 47vh;
+        right: 5vw;
+        opacity: 1;
+        content: "WRC-geinspireerde GR-FOUR vierwielaandrijving"
+    }
+    100% {
+        top: 47vh;
+        right: 5vw;
+        opacity: 1;
+        content: "WRC-geinspireerde GR-FOUR vierwielaandrijving"
+    }
+}
