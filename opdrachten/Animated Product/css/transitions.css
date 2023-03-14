@@ -1,0 +1,37 @@
+.YarisImageContainer p:nth-child(1):hover + .YarisImage{
+    background: url("../images/GRYaris/1Red.jpg") no-repeat center center / 80%;
+}
+
+.YarisImage:hover{
+    background: url("../images/GRYaris/2White.jpg") no-repeat center center / 90%;
+}
+
+.SupraImageContainer p:nth-child(1):hover + .SupraImage{
+    background: url("../images/GRSupra/1Yellow.jpg") no-repeat center center / 90%;
+}
+
+.SupraImage:hover{
+    background: url("../images/GRSupra/2White.jpg") no-repeat center center / 100%;
+}
+
+.GR86ImageContainer p:nth-child(1):hover + .GR86Image{
+    background: url("../images/GR86/1Blue.jpg") no-repeat center center / 90%;
+}
+
+.GR86Image:hover{
+    background: url("../images/GR86/2White.jpg") no-repeat center center / 100%;
+}
+
+.GRLogo:hover + .CorollaPromo{
+    transform: translateX(-37%) skewX(calc(var(--promo-skew) * -1));
+    opacity: 1;
+}
+
+.GRLogo:hover + .CorollaPromo p{
+    transform: skewX(var(--promo-skew));
+}
+
+.GRLogo:hover + .CorollaPromo img{
+    transform: skewX(var(--promo-skew)) scale(2);
+}
+

@@ -29,7 +29,7 @@ h2{
 }
 
 .categoryBox:hover .categoryBoxLinksContainer {
-    max-height: 300px; /* adjust this value to fit your content */
+    max-height: 400px; /* adjust this value to fit your content */
     transition: max-height 0.5s ease-in-out;
   }
   

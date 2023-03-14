@@ -1,0 +1,177 @@
+:root{
+    --main-text-color: #000000;
+    --secondary-text-color: #a8aaac;
+    --promo-skew : 14deg;
+    --slide-animation-duration : 500ms;
+    --slide-animation-delay : 300ms;
+    --intro-duration: 2500ms;
+    --intro-delay: 800ms;
+}
+
+.cssGridContainer{
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 0.5fr repeat(3, 3fr) 0.5fr;   
+    grid-template-rows: 0.5fr 1.2fr 2fr 2fr 3fr 0.5fr;
+    grid-template-areas: 
+    ". . . . ."
+    ". title . logo ."
+    ". maincontent maincontent maincontent ."
+    ". maincontent maincontent maincontent ."
+    ". small1 small2 small3 ."
+    ". . . . ."
+    ;
+}
+
+body{
+    background-color: white !important;
+    overflow: hidden;
+}
+
+h1{
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+h1, h3{
+    color: var(--main-text-color);
+}
+
+h2, .carDesc p{
+    color: var(--secondary-text-color);
+}
+
+.title{
+    grid-area: title;
+}
+
+.logoContainer{
+    grid-area: logo;
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+}
+
+.GRLogo{
+    width: 12%;
+    position: absolute;
+    /* background-color: #fff;
+    padding: 0 0 5% 0; */
+    cursor: pointer;
+    z-index: 2;
+}
+
+.CorollaPromo{
+    transform: skewX(calc(var(--promo-skew) * -1));
+    width: 35%;
+    position: absolute;
+    z-index: 1;
+    transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
+    background-color: var(--secondary-text-color);
+    overflow: hidden;
+    opacity: 0;
+}
+
+.CorollaPromo p{
+    transform: skewX(var(--promo-skew));
+    padding: 0 0 15px 30px;
+    font-weight: bold;
+}
+
+.CorollaPromo img{
+    transform: skewX(var(--promo-skew)) scale(2);
+}
+
+.logoContainer div p{
+    color: #fff;
+    font-size: 1.7rem;
+}
+
+main{
+    grid-area: maincontent;
+}
+
+main img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carArticleContainer{
+    opacity: 0;
+}
+
+.carImageContainer{
+    height: 80%;
+    display: flex; 
+    flex-direction: column-reverse;
+    cursor: pointer;
+}
+
+.carImageContainer p:nth-child(1){
+    color: var(--secondary-text-color);
+}
+
+.Yaris{
+    grid-area: small1;
+    animation: slideInFromBottom var(--slide-animation-duration) ease-in calc(var(--intro-duration)/2) 1 normal forwards;
+}
+
+.YarisImage{
+    background: url("../images/GRYaris/1White.jpg") no-repeat center center / 80%;
+    height: 80%;
+    transition: background 300ms ease-in-out;
+}
+
+.YarisImageContainer p:nth-child(1) span{
+    color: #bc3636;
+    font-weight: bold;
+}
+
+.Supra{
+    grid-area: small2;
+    animation: slideInFromBottom var(--slide-animation-duration) ease-in calc((var(--intro-duration) / 2) + var(--slide-animation-delay)) 1 normal forwards;
+}
+
+.SupraImage{
+    background: url("../images/GRSupra/1White.jpg") no-repeat center center / 90%;
+    height: 80%;
+    transition: background 300ms ease-in-out;
+}
+
+.SupraImageContainer p:nth-child(1) span{
+    color: #f0d614;
+    font-weight: bold;
+}
+
+.GR86{
+    grid-area: small3;
+    animation: slideInFromBottom var(--slide-animation-duration) ease-in calc((var(--intro-duration) / 2) + (var(--slide-animation-delay) * 2)) 1 normal forwards;
+}
+
+.GR86Image{
+    background: url("../images/GR86/1White.jpg") no-repeat center center / 90%;
+    height: 80%;
+    transition: background 300ms ease-in-out;
+}
+
+.GR86ImageContainer p:nth-child(1) span{
+    color: #1a12ab;
+    font-weight: bold;
+}
+
+.colorRow{
+    display: flex;
+    flex-direction: row;
+}
+
+.colorRow img{
+    width: 10%;
+    border-radius: 50%;
+    padding: 2px;
+    margin: 0 5px 2px 5px;
+    border: 1.5px solid var(--main-text-color);
+    cursor: pointer;
+}
