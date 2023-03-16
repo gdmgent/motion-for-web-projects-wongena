@@ -45,6 +45,9 @@ h2, .carDesc p{
 
 .title{
     grid-area: title;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .logoContainer{
@@ -216,7 +219,7 @@ article div p{
 .Article2{
     grid-area: article2;
     margin-left: 5px;
-    background: linear-gradient(0deg, var(--main-text-color) 0%, rgba(0,0,0,0) 75%), url("../images/Articles/HeritageParts.jpg") no-repeat left center / cover;
+    background: linear-gradient(0deg, var(--main-text-color) 0%, rgba(0,0,0,0) 75%), url("../images/Articles/Heritage1.jpg") no-repeat left center / cover;
     justify-self: left;
 }
 
