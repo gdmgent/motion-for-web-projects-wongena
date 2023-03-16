@@ -25,6 +25,7 @@
 .GRLogo:hover + .CorollaPromo{
     transform: translateX(-37%) skewX(calc(var(--promo-skew) * -1));
     opacity: 1;
+    display: block;
 }
 
 .GRLogo:hover + .CorollaPromo p{
@@ -35,3 +36,23 @@
     transform: skewX(var(--promo-skew)) scale(2);
 }
 
+article:hover{
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.5);
+}
+
+article:hover div h3{
+    top: 0;
+}
+
+article:hover div p{
+    opacity: 1;
+}
+
+article a:hover{
+    background-position: -100% 0;
+    color: #fff;
+}
+
+article a:hover span{
+    color: #fff;
+}

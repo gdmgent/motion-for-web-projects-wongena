@@ -1,6 +1,7 @@
 :root{
     --main-text-color: #000000;
     --secondary-text-color: #a8aaac;
+    --primary-red:#EB0A1E;
     --promo-skew : 14deg;
     --slide-animation-duration : 500ms;
     --slide-animation-delay : 300ms;
@@ -12,15 +13,15 @@
     width: 100%;
     height: 100vh;
     display: grid;
-    grid-template-columns: 0.5fr repeat(3, 3fr) 0.5fr;   
-    grid-template-rows: 0.5fr 1.2fr 2fr 2fr 3fr 0.5fr;
+    grid-template-columns: 0.5fr repeat(6, 1.5fr) 0.5fr;   
+    grid-template-rows: 0.2fr 1.2fr 2fr 2fr 3fr 0.2fr;
     grid-template-areas: 
-    ". . . . ."
-    ". title . logo ."
-    ". maincontent maincontent maincontent ."
-    ". maincontent maincontent maincontent ."
-    ". small1 small2 small3 ."
-    ". . . . ."
+    ". . . . . . . ."
+    ". title title . . logo logo ."
+    ". article1 article1 article1 article2 article2 article2 ."
+    ". article1 article1 article1 article2 article2 article2 ."
+    ". small1 small1 small2 small2 small3 small3 ."
+    ". . . . . . . ."
     ;
 }
 
@@ -174,4 +175,70 @@ main img{
     margin: 0 5px 2px 5px;
     border: 1.5px solid var(--main-text-color);
     cursor: pointer;
+}
+
+article{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 10px;
+    border-radius: 10px;
+    width: 100%;
+    overflow: hidden;
+    transition:box-shadow 150ms ease-in-out;
+
+}
+
+article h3{
+    color: #fff;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+article div h3{
+    position: relative;
+    top: 50%;
+    transition: top 150ms ease-in-out;
+}
+
+article div p{
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
+}
+
+.Article1{
+    grid-area: article1;
+    margin-right: 5px;
+    background: linear-gradient(0deg, var(--main-text-color) 0%, rgba(0,0,0,0) 75%), url("../images/Articles/AE86\ BEV.jpg") no-repeat center center / cover;
+    justify-self: right;
+}
+
+.Article2{
+    grid-area: article2;
+    margin-left: 5px;
+    background: linear-gradient(0deg, var(--main-text-color) 0%, rgba(0,0,0,0) 75%), url("../images/Articles/HeritageParts.jpg") no-repeat left center / cover;
+    justify-self: left;
+}
+
+article a{
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--main-text-color);
+    padding: 10px 20px 10px 20px;
+    margin: 10px;
+    width: 20%;
+    background: linear-gradient(to left, var(--primary-red) 50%, #fff 50%);
+    background-size: 200% 100%;
+    transform: skewX(calc(-1 * var(--promo-skew)));
+    transition: background-position 100ms ease-in-out, color 100ms ease-in-out;
+}
+
+article a span{
+    color: var(--primary-red);
+    transition: color 100ms ease-in-out;;
 }
