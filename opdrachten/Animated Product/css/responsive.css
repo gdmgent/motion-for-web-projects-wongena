@@ -1,0 +1,50 @@
+@media only screen and (max-width: 500px) {
+    html, body {
+        overflow-x: hidden;
+      }
+    body{
+        overflow: auto;
+        position: relative;
+        width: 100%;
+    }
+
+    h3{
+        font-size: 1rem !important;
+    }
+
+    .cssGridContainer{
+        grid-template-columns: 1fr;   
+        grid-template-rows: 5% 30% 30% 25% 25% 25%;
+        grid-template-areas:
+        "title"
+        "article1"
+        "article2"
+        "small1"
+        "small2"
+        "small3";
+        gap: 5px;
+        padding: 0 0 0 5px;
+    }
+
+    .GRLogo{
+        display: none;
+    }
+
+    article{
+        margin: 0 !important;
+        border-radius: 0;
+    }
+
+    article p{
+        font-size: 0.8rem;
+    }
+
+    article a{
+        font-size: 0.7rem;
+        padding: 10px 50px 10px 50px;
+    }
+
+    .carImageContainer p{
+        font-size: 0.8rem;
+    }
+}

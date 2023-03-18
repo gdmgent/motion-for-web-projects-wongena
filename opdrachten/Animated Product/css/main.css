@@ -7,6 +7,7 @@
     --slide-animation-delay : 300ms;
     --intro-duration: 2500ms;
     --intro-delay: 800ms;
+    --intro-offscreen-position: 710vh;
 }
 
 .cssGridContainer{
