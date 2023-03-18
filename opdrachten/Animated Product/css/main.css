@@ -238,10 +238,10 @@ article a{
     background: linear-gradient(to left, var(--primary-red) 50%, #fff 50%);
     background-size: 200% 100%;
     transform: skewX(calc(-1 * var(--promo-skew)));
-    transition: background-position 100ms ease-in-out, color 100ms ease-in-out;
+    transition: background-position 100ms ease-in-out, color 300ms ease-in-out;
 }
 
 article a span{
     color: var(--primary-red);
-    transition: color 100ms ease-in-out;;
+    transition: color 300ms ease-in-out;;
 }
