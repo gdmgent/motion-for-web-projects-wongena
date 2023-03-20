@@ -1,0 +1,38 @@
+header{
+    nav{
+        background: linear-gradient(to right, #000000, #ffffff);
+        ul{
+            display: flex;
+            li{
+                list-style: none;
+                padding: 10px;
+                a{
+                    text-decoration: none;
+                    color: #ffffff;
+                    font-size: 20px;
+                    font-weight: bold;
+                    &:hover{
+                        color: #000000; 
+                    }
+                    &:active{
+                        color: red;
+                    }
+                }
+            }
+        }
+    }
+}
+
+$colors:
+    "primary"  #000000,
+    "secondary"  #ffffff,
+    "tertiary"  #ff0000;
+
+@each $name , $color in $colors {
+    a.btn.#{$name} {
+        background-color: $color;
+        &:hover {
+            background-color: darken($color, 10%);
+        }
+    }
+}
