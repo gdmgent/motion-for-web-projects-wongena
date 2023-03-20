@@ -108,6 +108,10 @@ main img{
     opacity: 0;
 }
 
+.carArticleContainer a{
+    text-decoration: none;
+}
+
 .carImageContainer{
     height: 80%;
     display: flex; 

@@ -1,0 +1,122 @@
+:root{
+    --main-text-color: #000000;
+    --secondary-text-color: #a8aaac;
+    --primary-red:#EB0A1E;
+    --promo-skew : 14deg;
+    --slide-animation-duration : 500ms;
+    --slide-animation-delay : 300ms;
+    --intro-duration: 2500ms;
+    --intro-delay: 800ms;
+    --intro-offscreen-position: 710vh;
+}
+
+body{
+    background-color: white !important;
+    color: black;
+}
+
+.cssGridContainer{
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr repeat(6, 1.5fr) 1fr;   
+    grid-template-rows: 2% 7% 5% repeat(6, 20%) 2%;
+    grid-template-areas: 
+    ". . . . . . . ."
+    ". title title . . logo logo ."
+    ". . . . . . . ."
+    ". titleImage titleImage titleImage titleImage details details ."
+    ". titleImage titleImage titleImage titleImage details details ."
+    ". soundBox soundBox soundBox soundBox soundBox soundBox ."
+    ". soundBox soundBox soundBox soundBox soundBox soundBox ."
+    ". soundBox soundBox soundBox soundBox soundBox soundBox ."
+    ". . . . . . . .";
+
+}
+
+.title{
+    grid-area: title;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.logoContainer{
+    grid-area: logo;
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+}
+
+.GRLogo{
+    width: 10%;
+    position: absolute;
+    cursor: pointer;
+}
+
+.titleNImage{
+    grid-area: titleImage;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.YarisImage{
+    background: url("../../../../opdrachten/Animated Product/images/GRYaris/1White.jpg") no-repeat center center / contain;
+    height: 80%;
+    transition: background 300ms ease-in-out;
+}
+
+.details{
+    grid-area: details;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 80%;
+}
+
+.details button{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--main-text-color);
+    padding: 10px 20px 10px 20px;
+    margin: 10px;
+    border: solid #000 1px;
+    width: 40%;
+    background: linear-gradient(to left, var(--primary-red) 50%, #fff 50%);
+    background-size: 200% 100%;
+    transform: skewX(calc(-1 * var(--promo-skew)));
+    transition: background-position 100ms ease-in-out, color 300ms ease-in-out;
+}
+
+.details button span{
+    color: var(--primary-red);
+    transition: color 300ms ease-in-out;;
+}
+
+.soundBox{
+    grid-area: soundBox;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    background: #000;
+}
+
+.soundBox div{
+    color: white;
+    font-size: 1.2rem;
+}
+
+#canvas {
+    width: 100%;
+    height: 60%;
+  }

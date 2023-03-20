@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="../../../css/main.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/transitions.css" />
+    <title>Document</title>
+</head>
+<body>
+    <div class="cssGridContainer">
+        <div class="title">
+          <a href="../../../opdrachten/Animated Product/index.html">
+            <img src="../../../opdrachten/Animated Product/images/logo.png" alt="Toyota GR logo" height="auto" />
+          </a>
+        </div>
+        <div class="logoContainer">
+              <img class="GRLogo" src="../../../opdrachten/Animated Product/images/Toyota_GR.svg" height="auto" />
+        </div>
+        <div class="titleNImage">
+            <div class="YarisImage"></div>
+        </div>
+        <div class="details">
+          <div>
+            <h1>GR Yaris</h1>
+            <p>1.6L turbocharged 3 cylinder</p>
+            <p>261hp power</p>
+            <p>360Nm torque</p>
+            <p>0-100 - 5.5s</p>
+            <p>Top speed - 230km/h</p>
+            <p>from € 38.920</p>
+          </div>
+          <button>Buy now&nbsp;&nbsp;<span>></span></button>
+        </div>
+        <div class="soundBox">
+          <div>
+            <h2>Experience the GR Yaris sound</h2>
+            <p>Immerse yourself in the sound of the Toyota GR Yaris exhaust systems.</p>
+          </div>
+          <canvas id="canvas"></canvas>
+          <button class="playBtn" onclick="playStockSound()">Play sound</button>
+          <audio id="stockYarisAudio">
+            <source src="sound/StockYaris.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+        <script src="js/main.js"></script>
+</body>
+</html>

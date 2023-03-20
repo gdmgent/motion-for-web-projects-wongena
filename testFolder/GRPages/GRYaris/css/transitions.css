@@ -1,0 +1,12 @@
+.details button:hover{
+    background-position: -100% 0;
+    color: #fff;
+}
+
+.details button:hover span{
+    color: #fff;
+}
+
+.YarisImage:hover{
+    background: url("../../../../opdrachten/Animated Product/images/GRYaris/2White.jpg") no-repeat center center / contain;
+}
