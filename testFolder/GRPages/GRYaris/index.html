@@ -37,13 +37,18 @@
         </div>
         <div class="soundBox">
           <div>
-            <h2>Experience the GR Yaris sound</h2>
+            <h2>Experience the GR Yaris' sound</h2>
             <p>Immerse yourself in the sound of the Toyota GR Yaris exhaust systems.</p>
           </div>
           <canvas id="canvas"></canvas>
-          <button class="playBtn" onclick="playStockSound()">Play sound</button>
+          <button class="playBtn" onclick="playSound(0)">Stock exhaust</button>
+          <button class="playBtnModded" onclick="playSound(1)">Optional Akrapovic exhaust</button>
           <audio id="stockYarisAudio">
             <source src="sound/StockYaris.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+          <audio id="moddedYarisAudio">
+            <source src="sound/ModdedYaris.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
           </audio>
         </div>
