@@ -37,6 +37,35 @@
     }
 }
 
+@media screen and (max-width: 900px) {
+
+    .BGB{
+        animation: BGBmove calc(var(--intro-duration)/2.5) linear var(--intro-delay) 1 normal forwards;
+    }
+    
+    .BGR{
+        animation: BGRmove calc(var(--intro-duration)/2.5) linear var(--intro-delay) 1 normal forwards;
+    }
+
+    @keyframes BGBmove {
+        0%{
+            transform: translateX(0);
+        }
+        100%{
+            transform: translate(-100vw, calc(var(--intro-offscreen-position) / 2.5));
+        }
+    }
+    
+    @keyframes BGRmove {
+        0%{
+            transform: translateX(0);
+        }
+        100%{
+            transform: translate(100vw, calc(var(--intro-offscreen-position) * -1 / 2.5));
+        }
+    }
+}
+
 @media screen and (max-width: 500px) {
 
     .BGB{

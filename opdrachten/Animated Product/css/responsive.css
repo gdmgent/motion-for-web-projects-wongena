@@ -1,6 +1,33 @@
+@media only screen and (max-width: 900px) {
+    body{
+        overflow: auto;
+    }
+    .cssGridContainer{
+        grid-template-columns: repeat(6, 1fr);   
+        grid-template-rows: 5% 40% 40% 40% 40%;
+        grid-template-areas:
+        "title title title . . ."
+        "article1 article1 article1 article2 article2 article2"
+        "small1 small1 small1 small1 small1 small1"
+        "small2 small2 small2 small2 small2 small2"
+        "small3 small3 small3 small3 small3 small3";
+        gap: 5px;
+        padding: 0 0 0 5px;
+    }
+
+    .logoContainer{
+        display: none;
+    }
+
+    article a{
+        font-size: 0.9rem;
+        padding: 10px 50px 10px 50px;
+    }
+}
+
 @media only screen and (max-width: 500px) {
     html, body {
-        overflow-x: hidden;
+        overflow-x: hidden !important;
       }
     body{
         overflow: auto;
@@ -14,7 +41,7 @@
 
     .cssGridContainer{
         grid-template-columns: 1fr;   
-        grid-template-rows: 5% 30% 30% 25% 25% 25%;
+        grid-template-rows: 5% 30% 30% 30% 30% 30%;
         grid-template-areas:
         "title"
         "article1"
@@ -42,6 +69,22 @@
     article a{
         font-size: 0.7rem;
         padding: 10px 50px 10px 50px;
+    }
+
+    .carImage{
+        height: 100%;
+    }
+
+    .Yaris{
+        animation: slideInFromRight var(--slide-animation-duration) ease-in calc(var(--intro-duration)/2) 1 normal forwards;
+    }
+
+    .Supra{
+        animation: slideInFromRight var(--slide-animation-duration) ease-in  calc((var(--intro-duration) / 2) + var(--slide-animation-delay)) 1 normal forwards;
+    }
+
+    .GR86{
+        animation: slideInFromRight var(--slide-animation-duration) ease-in  calc((var(--intro-duration) / 2) + (var(--slide-animation-delay) * 2)) 1 normal forwards;
     }
 
     .carImageContainer p{
