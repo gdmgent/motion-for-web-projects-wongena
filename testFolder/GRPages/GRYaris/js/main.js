@@ -34,7 +34,6 @@ function playSound(sound) {
     analyser.fftSize = 256
 
     var bufferLength = analyser.frequencyBinCount
-    console.log(bufferLength)
 
     var dataArray = new Uint8Array(bufferLength)
 
@@ -59,12 +58,12 @@ function playSound(sound) {
         barHeight = dataArray[i]
 
         var r = barHeight + 25 * (i / bufferLength)
-        var g = 250 * (i / bufferLength)
-        var b = 50
+        var g = barHeight + 25 * (i / bufferLength)/255
+        var b = barHeight + 25 * (i / bufferLength)/255
 
-        //ctx.fillStyle = "rgb(" + r + "," + g + "," + b + ")";
-        ctx.fillStyle = '#fff'
-        ctx.fillRect(x / 2, HEIGHT - barHeight, barWidth / 4, barHeight)
+        ctx.fillStyle = "rgb(" + r + "," + g + "," + b + ")";
+        //ctx.fillStyle = '#fff'
+        ctx.fillRect(x/2, HEIGHT - barHeight, barWidth /4 , barHeight)
 
         x += barWidth + 1
       }
