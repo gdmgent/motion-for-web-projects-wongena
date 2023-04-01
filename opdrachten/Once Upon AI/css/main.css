@@ -59,7 +59,7 @@ body .home {
   align-items: center;
   height: 100vh;
   z-index: var(--amount-scenes);
-  background-image: linear-gradient(135deg, rgba(108, 108, 108, 0.5215686275), rgba(0, 0, 0, 0.9176470588)), url(../images/demacia-splashvideo.gif);
+  background-image: linear-gradient(135deg, rgba(108, 108, 108, 0.5215686275), #000000), url(../images/demacia-splashvideo.gif);
 }
 body .home .title {
   display: flex;
@@ -116,14 +116,14 @@ body .ch3s2 {
   background: url(../images/ch3/s2/1.png) no-repeat center center/cover;
 }
 body .ch3s3::after {
-  background: url(../images/ch3/S3/1R.png) no-repeat center center/cover;
+  background: url(../images/ch3/s3/1R.png) no-repeat center center/cover;
 }
 body .ch3s4 {
   background: url(../images/ch3/s4/1.png) no-repeat center center/cover;
 }
 body .ch3s5::after {
-  background: url(../images/ch3/S5/1R.png) no-repeat center center/cover;
+  background: url(../images/ch3/s5/1R.png) no-repeat center center/cover;
 }
 body .ch4s1 {
-  background: url(../images/ch4/CH1/1.png) no-repeat center center/cover;
+  background: url(../images/ch4/s1/1.png) no-repeat center center/cover;
 }/*# sourceMappingURL=main.css.map */
