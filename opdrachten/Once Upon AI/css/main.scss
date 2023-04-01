@@ -144,4 +144,20 @@ body {
     .ch4s1{
         background: url(../images/ch4/s1/1.png) no-repeat center center / cover;
     }
+    .ch4s2{
+        &::after {
+            background: url(../images/ch4/s2/1R.png) no-repeat center center / cover;
+        }
+    }
+    .ch5s1{
+        background: url(../images/ch5/s1/1.png) no-repeat center center / cover;
+    }
+    .ch5s2{
+        &::after {
+            background: url(../images/ch5/s2/1R.png) no-repeat center center / cover;
+        }
+    }
+    .ch5s3{
+        background: url(../images/ch5/s3/1.png) no-repeat center center / cover;
+    }
 }
