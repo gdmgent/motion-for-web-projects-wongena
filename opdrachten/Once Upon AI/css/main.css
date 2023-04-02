@@ -23,6 +23,7 @@ body main {
   overflow-x: hidden;
   overflow-y: auto;
   scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
 }
 body main section {
   transform-style: preserve-3d;
@@ -36,6 +37,16 @@ body main section img {
 }
 body main section .front {
   z-index: 1;
+}
+body main section .mainText {
+  font-family: "Beaufort", serif;
+  color: #f0e6d2;
+  font-size: 1.7rem;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.462745098);
+  padding: 10px;
+  border-radius: 5px;
+  max-width: 30vw;
 }
 body main .noParallax {
   z-index: 2;
@@ -89,6 +100,7 @@ body .home p {
   background: text;
 }
 body nav {
+  height: 0px;
   padding: 10px;
   position: sticky;
   top: 0;
@@ -113,8 +125,16 @@ body nav a:hover {
 body .ch1s1 {
   background: url(../images/ch1/s1/1.png) no-repeat center center/cover;
 }
+body .ch1s1 p {
+  top: 10vh;
+  right: 5vw;
+}
 body .ch1s2::after {
   background: url(../images/ch1/s2/1R.png) no-repeat center center/cover;
+}
+body .ch1s2 p {
+  top: 10vh;
+  left: 7vw;
 }
 body .ch1s3 {
   background: url(../images/ch1/s3/1.png) no-repeat center center/cover;
