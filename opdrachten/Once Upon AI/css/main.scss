@@ -44,6 +44,7 @@ body {
                 padding: 10px;
                 border-radius: 5px;
                 max-width: 30vw;
+                z-index: 2;
             }
         }
         .noParallax{
@@ -145,62 +146,122 @@ body {
     }
     .ch1s3{
         background: url(../images/ch1/s3/1.png) no-repeat center center / cover;
+        p{
+            top: 10vh;
+            right: 10vw;
+        }
     }
     .ch1s4{
         &::after {
             background: url(../images/ch1/s4/1R.png) no-repeat center center / cover;
         }
+        p{
+            top: 10vh;
+            left: 7vw;
+        }
     }
     .ch2s1{
         background: url(../images/ch2/s1/1.png) no-repeat center center / cover;
+        p{
+            top: 7vh;
+            left: 7vw;
+        }
     }
     .ch2s2{
         &::after {
             background: url(../images/ch2/s2/1R.png) no-repeat center center / cover;
         }
+        p{
+            bottom: 7vh;
+            left: 7vw;
+        }
     }
     .ch2s3{
         background: url(../images/ch2/s3/1.png) no-repeat center center / cover;
+        p{
+            top: 10vh;
+            right: 7vw;
+        }
     }
     .ch3s1{
         &::after {
             background: url(../images/ch3/s1/1R.png) no-repeat center center / cover;
         }
+        p{
+            top: 7vh;
+            left: 7vw;
+        }
     }
     .ch3s2{
         background: url(../images/ch3/s2/1.png) no-repeat center center / cover;
+        p{
+            top: 10vh;
+            left: 7vw;
+        }
     }
     .ch3s3{
         &::after {
             background: url(../images/ch3/s3/1R.png) no-repeat center center / cover;
         }
+        p{
+            top: 10vh;
+            left: 10vw;
+        }
     }
     .ch3s4{
         background: url(../images/ch3/s4/1.png) no-repeat center center / cover;
+        p{
+            top: 10vh;
+            right: 7vw;
+        }
     }
     .ch3s5{
         &::after {
             background: url(../images/ch3/s5/1R.png) no-repeat center center / cover;
         }
+        p{
+            top: 10vh;
+            left: 7vw;
+        }
     }
     .ch4s1{
         background: url(../images/ch4/s1/1.png) no-repeat center center / cover;
+        p{
+            top: 10vh;
+            left: 7vw;
+        }
     }
     .ch4s2{
         &::after {
             background: url(../images/ch4/s2/1R.png) no-repeat center center / cover;
         }
+        p{
+            top: 10vh;
+            left: 7vw;
+        }
     }
     .ch5s1{
         background: url(../images/ch5/s1/1.png) no-repeat center center / cover;
+        p{
+            bottom: 10vh;
+            left: 7vw;
+        }
     }
     .ch5s2{
         &::after {
             background: url(../images/ch5/s2/1R.png) no-repeat center center / cover;
         }
+        p{
+            bottom: 10vh;
+            left: 7vw;
+        }
     }
     .ch5s3{
         background: url(../images/ch5/s3/1.png) no-repeat center center / cover;
+        p{
+            top: 10vh;
+            right: 7vw;
+        }
     }
     .end{
         .credits{
