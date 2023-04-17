@@ -1,0 +1,12 @@
+.box{
+    width: 200px;
+    height: 200px;
+    background-color: aliceblue;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+h1{
+    display: inline-block;
+}
