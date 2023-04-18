@@ -88,6 +88,6 @@ h2{
     }
 
     .categoryBox:hover .categoryBoxLinksContainer {
-      max-height: 500px; /* adjust this value to fit your content */
+      max-height: 700px; /* adjust this value to fit your content */
     }
 }
