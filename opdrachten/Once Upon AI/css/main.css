@@ -61,10 +61,12 @@ body main .parallax::after {
   right: 0;
   bottom: 0;
   left: 0;
-  background-size: 100% !important;
   transform: translateZ(-1px) scale(1.5);
   background-size: cover;
   z-index: -1;
+}
+body main .parallax img {
+  bottom: 0;
 }
 body .home {
   display: flex;
