@@ -290,4 +290,22 @@ body .end .credits img {
   width: 90%;
   position: relative;
   top: -20px;
+}
+
+@media only screen and (max-width: 900px) {
+  .title h1 {
+    font-size: 2rem !important;
+  }
+  .title img {
+    top: 0px !important;
+  }
+  .subtitle p {
+    font-size: 1.5rem !important;
+  }
+  nav {
+    top: 70vh !important;
+  }
+  section p {
+    font-size: 1rem !important;
+  }
 }/*# sourceMappingURL=main.css.map */
