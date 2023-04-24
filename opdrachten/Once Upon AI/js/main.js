@@ -14,10 +14,36 @@ sections.forEach((section) => {
       scroller: main,
       trigger: section,
       start: "top center",
-      toggleActions:"play reverse play reverse"
+      toggleActions:"play reset play reset"
     },
     ease: "back.out(0.7)"
     });
+});
+
+gsap.from(".links", {
+  x: "-100%",
+  duration: 0.7,
+  opacity: 0,
+  scrollTrigger: {
+    scroller: main,
+    trigger: ".links",
+    start: "top center",
+    toggleActions:"play none play reset"
+  },
+  ease: "ease"
+});
+
+gsap.from(".loadingBar", {
+  height: 0,
+  duration: 0.7,
+  opacity: 0,
+  scrollTrigger: {
+    scroller: main,
+    trigger: ".links",
+    start: "top center",
+    toggleActions:"play none play reset"
+  },
+  ease: "ease"
 });
 
 main.addEventListener('scroll', function() {
