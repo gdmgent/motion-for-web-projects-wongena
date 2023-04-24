@@ -22,7 +22,7 @@ sections.forEach((section) => {
 
 gsap.from(".links", {
   x: "-100%",
-  duration: 1,
+  duration: 0.7,
   opacity: 0,
   scrollTrigger: {
     scroller: main,
@@ -30,7 +30,7 @@ gsap.from(".links", {
     start: "top center",
     toggleActions:"play none play reset"
   },
-  ease: "back.out(0.7)"
+  ease: "ease"
 });
 
 gsap.from(".loadingBar", {
