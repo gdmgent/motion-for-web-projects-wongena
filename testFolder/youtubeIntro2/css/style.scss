@@ -11,12 +11,32 @@ body{
         top: 60%;
         rotate: -20deg;
     }
-    .blackSquare{
+    .blackBox{
         height: 50px;
         width: 50px;
         background-color: #000000;
         position: absolute;
         top: 60%;
+        left: 47vw;
+        display: none;
+    }
+    .keyboardSquare{
+        border-bottom: 20px solid #555;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        height: 0;
+        width: 50px;
+        position: absolute;
+        top: 70%;
+        left: 47vw;
+        display: none;
+    }
+    .standSquare{
+        height: 50px;
+        width: 50px;
+        background-color: #000000;
+        position: absolute;
+        top: 70%;
         left: 47vw;
         display: none;
     }
