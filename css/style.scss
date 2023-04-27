@@ -120,6 +120,16 @@ body{
                 }
             }
         }
+        .arrow{
+            z-index: 2;
+            position: absolute;
+            left: 47vw;
+            top: 90vh;
+            filter: invert(94%) sepia(64%) saturate(4294%) hue-rotate(179deg) brightness(111%) contrast(101%);
+            animation: arrowIdle 2s ease-in-out infinite;
+            opacity: 1;
+            transition: opacity 0.3s ease-in-out;
+        }
     }
     .links{
         position: relative;
@@ -127,7 +137,7 @@ body{
         flex-direction: column;
         z-index: 1;
         height: 100vh;
-        padding: 10%;
+        padding: 7% 10% 10% 10%;
         font-family: 'Commissioner', sans-serif;
         h2{
             
@@ -138,6 +148,13 @@ body{
             font-size: 2rem;
             margin-bottom: 20px;
             width: 100%;
+        }
+        .titleDivider{
+            width: 75%;
+            min-height: 1px;
+            background-color: lightcoral;
+            border-radius: 50px;
+            margin: 10px 0 10px 0;
         }
         .allLinks{
             display: flex;
@@ -183,4 +200,66 @@ body{
     top: 0;
     height: 200vh;
     z-index: 0;
+}
+
+@media (max-width: 500px) {
+    html, body{
+        overflow-x: hidden !important;
+    }
+    .homePage{
+        width: 100vw;
+        .homeText{
+            width: 100vw !important;
+            justify-content: flex-start !important;
+            padding: 50px 20px !important;
+            h1{
+                font-size: 4rem !important;
+                line-height: 4rem !important;
+            }
+            .line{
+                width: 40% !important;
+            }
+            .line2{
+                margin-right: 40% !important;
+            }
+        }
+        .moonDiv{
+            width: 100vw !important;
+            height: 50vh !important;
+            div{
+                top: 40vh !important;
+                right: -50vw !important;
+            }
+        }
+        .arrow{
+            display: none !important;
+        }
+    }
+    .links{
+        height: auto !important;
+        .allLinks{
+            height: auto !important;
+            .linkSubSection{
+                width: 100vw !important;
+                p{
+                    font-size: 1.5rem !important;
+                }
+                a{
+                    font-size: 1.2rem !important;
+                }
+            }
+        }
+    }
+}
+
+@keyframes arrowIdle {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
