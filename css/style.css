@@ -186,6 +186,55 @@ body .links .allLinks .linkSubSection div a:hover {
   z-index: 0;
 }
 
+@media (max-width: 500px) {
+  html, body {
+    overflow-x: hidden !important;
+  }
+  .homePage {
+    width: 100vw;
+  }
+  .homePage .homeText {
+    width: 100vw !important;
+    justify-content: flex-start !important;
+    padding: 50px 20px !important;
+  }
+  .homePage .homeText h1 {
+    font-size: 4rem !important;
+    line-height: 4rem !important;
+  }
+  .homePage .homeText .line {
+    width: 40% !important;
+  }
+  .homePage .homeText .line2 {
+    margin-right: 40% !important;
+  }
+  .homePage .moonDiv {
+    width: 100vw !important;
+    height: 50vh !important;
+  }
+  .homePage .moonDiv div {
+    top: 40vh !important;
+    right: -50vw !important;
+  }
+  .homePage .arrow {
+    display: none !important;
+  }
+  .links {
+    height: auto !important;
+  }
+  .links .allLinks {
+    height: auto !important;
+  }
+  .links .allLinks .linkSubSection {
+    width: 100vw !important;
+  }
+  .links .allLinks .linkSubSection p {
+    font-size: 1.5rem !important;
+  }
+  .links .allLinks .linkSubSection a {
+    font-size: 1.2rem !important;
+  }
+}
 @keyframes arrowIdle {
   0% {
     transform: translateY(0);
