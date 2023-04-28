@@ -1,119 +1,95 @@
-import * as THREE from '../../node_modules/three/src/Three.js';
+// Import Three.js module
+import * as THREE from "https://cdn.skypack.dev/pin/three@v0.132.2-1edwuDlviJO0abBvWgKd/mode=imports/optimized/three.js";
 
-			import { StereoEffect } from 'three/addons/effects/StereoEffect.js';
+//parameters
+const parameters = {
+	count: 35000,
+	size: 0.01,
+	radius: 5,
+	spinSpeed: 0.0003,
+	insideColor: "#A2D3FF",
+	outsideColor: "#CEA2FF",
+  };
 
-			let container, camera, scene, renderer, effect;
+// Create a scene
+const scene = new THREE.Scene();
 
-			const spheres = [];
+// Create a camera
+const camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.001, 1000);
+camera.position.z = 5;
 
-			let mouseX = 0, mouseY = 0;
+// Get the canvas element by id
+const canvas = document.getElementById('canvas');
 
-			let windowHalfX = window.innerWidth / 2;
-			let windowHalfY = window.innerHeight / 2;
+// Create a renderer
+const renderer = new THREE.WebGLRenderer({canvas: canvas});
+renderer.setSize(window.outerWidth, window.innerHeight);
+document.body.appendChild(renderer.domElement);
 
-			document.addEventListener( 'mousemove', onDocumentMouseMove );
+// Create a particle geometry
+const particleGeometry = new THREE.BufferGeometry();
+const positions = new Float32Array(parameters.count * 3); // x, y, z for each particle
+const colors = new Float32Array(parameters.count * 3); // r, g, b for each particle
+const colorInside = new THREE.Color(parameters.insideColor);
+const colorOutside = new THREE.Color(parameters.outsideColor);
 
-			init();
-			animate();
+// Fill the positions and colors arrays with random values
+for (let i = 0; i < parameters.count; i++) {
+  // Position
+  const i3 = i * 3;
+  const radius = Math.random() * parameters.radius;
+  //const spinAngle = radius * Math.PI;
+  const angle = Math.random() * Math.PI * 2;
+  const x = Math.sin(angle) * radius;
+  const y = Math.cos(angle) * radius;
+  const z = Math.random() / radius - radius / 2;
+  positions[i3] = x;
+  positions[i3 + 1] = y;
+  positions[i3 + 2] = z;
 
-			function init() {
+  //mix 3 colors
+  const mixedColor = colorInside.clone();
+  mixedColor.lerp(colorOutside, radius / parameters.radius);
 
-				container = document.createElement( 'div' );
-				document.body.appendChild( container );
+  //kleuren r g en b opvullen
+  colors[i3] = mixedColor.r;
+  colors[i3 + 1] = mixedColor.g;
+  colors[i3 + 2] = mixedColor.b;
+}
 
-				camera = new THREE.PerspectiveCamera( 60, window.innerWidth / window.innerHeight, 1, 100000 );
-				camera.position.z = 3200;
+// Set the positions and colors attributes of the particle geometry
+particleGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+particleGeometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
 
-				scene = new THREE.Scene();
-				scene.background = new THREE.CubeTextureLoader()
-					.setPath( 'textures/cube/Park3Med/' )
-					.load( [ 'px.jpg', 'nx.jpg', 'py.jpg', 'ny.jpg', 'pz.jpg', 'nz.jpg' ] );
-				scene.background.colorSpace = THREE.SRGBColorSpace;
+// Create a particle material
+const particleMaterial = new THREE.PointsMaterial({
+  size: parameters.size,
+  vertexColors: true,
+});
 
-				const geometry = new THREE.SphereGeometry( 100, 32, 16 );
+// Create a particle system
+const particleSystem = new THREE.Points(particleGeometry, particleMaterial);
+scene.add(particleSystem);
 
-				const textureCube = new THREE.CubeTextureLoader()
-					.setPath( 'textures/cube/Park3Med/' )
-					.load( [ 'px.jpg', 'nx.jpg', 'py.jpg', 'ny.jpg', 'pz.jpg', 'nz.jpg' ] );
-				textureCube.mapping = THREE.CubeRefractionMapping;
-				textureCube.colorSpace = THREE.SRGBColorSpace;
+particleSystem.rotation.x = 2.3;
+particleSystem.rotation.y = 0.7;
+// Create an animation loop
+const animate = function () {
+  requestAnimationFrame(animate);
 
-				const material = new THREE.MeshBasicMaterial( { color: 0xffffff, envMap: textureCube, refractionRatio: 0.95 } );
+  // Rotate the particle system
+  particleSystem.rotation.z += parameters.spinSpeed;
+  //renderer.setSize(window.outerWidth, window.innerHeight);
 
-				for ( let i = 0; i < 500; i ++ ) {
+  // Render the scene
+  renderer.render(scene, camera);
+};
 
-					const mesh = new THREE.Mesh( geometry, material );
-					mesh.position.x = Math.random() * 10000 - 5000;
-					mesh.position.y = Math.random() * 10000 - 5000;
-					mesh.position.z = Math.random() * 10000 - 5000;
-					mesh.scale.x = mesh.scale.y = mesh.scale.z = Math.random() * 3 + 1;
-					scene.add( mesh );
+animate();
 
-					spheres.push( mesh );
+window.addEventListener('resize', onWindowResize);
 
-				}
-
-				//
-
-				renderer = new THREE.WebGLRenderer();
-				renderer.setPixelRatio( window.devicePixelRatio );
-				container.appendChild( renderer.domElement );
-
-				effect = new StereoEffect( renderer );
-				effect.setSize( window.innerWidth, window.innerHeight );
-
-				//
-
-				window.addEventListener( 'resize', onWindowResize );
-
-			}
-
-			function onWindowResize() {
-
-				windowHalfX = window.innerWidth / 2;
-				windowHalfY = window.innerHeight / 2;
-
-				camera.aspect = window.innerWidth / window.innerHeight;
-				camera.updateProjectionMatrix();
-
-				effect.setSize( window.innerWidth, window.innerHeight );
-
-			}
-
-			function onDocumentMouseMove( event ) {
-
-				mouseX = ( event.clientX - windowHalfX ) * 10;
-				mouseY = ( event.clientY - windowHalfY ) * 10;
-
-			}
-
-			//
-
-			function animate() {
-
-				requestAnimationFrame( animate );
-
-				render();
-
-			}
-
-			function render() {
-
-				const timer = 0.0001 * Date.now();
-
-				camera.position.x += ( mouseX - camera.position.x ) * .05;
-				camera.position.y += ( - mouseY - camera.position.y ) * .05;
-				camera.lookAt( scene.position );
-
-				for ( let i = 0, il = spheres.length; i < il; i ++ ) {
-
-					const sphere = spheres[ i ];
-
-					sphere.position.x = 5000 * Math.cos( timer + i );
-					sphere.position.y = 5000 * Math.sin( timer + i * 1.1 );
-
-				}
-
-				effect.render( scene, camera );
-
-			}
+function onWindowResize () {
+  renderer.setSize (window.innerWidth, window.innerHeight);
+  renderer.setViewport (0, 0, window.innerWidth, window.innerHeight);
+}
