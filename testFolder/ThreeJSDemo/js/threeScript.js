@@ -1,12 +1,13 @@
+
 // Import Three.js module
 import * as THREE from "https://cdn.skypack.dev/pin/three@v0.132.2-1edwuDlviJO0abBvWgKd/mode=imports/optimized/three.js";
 
 //parameters
 const parameters = {
-	count: 35000,
-	size: 0.01,
+	count: 40000,
+	size: 0.008,
 	radius: 5,
-	spinSpeed: 0.0003,
+	spinSpeed: 0.00015,
 	insideColor: "#A2D3FF",
 	outsideColor: "#CEA2FF",
   };
@@ -22,7 +23,7 @@ camera.position.z = 5;
 const canvas = document.getElementById('canvas');
 
 // Create a renderer
-const renderer = new THREE.WebGLRenderer({canvas: canvas});
+const renderer = new THREE.WebGLRenderer({canvas: canvas, alpha: true});
 renderer.setSize(window.outerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
@@ -61,10 +62,29 @@ for (let i = 0; i < parameters.count; i++) {
 particleGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
 particleGeometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
 
-// Create a particle material
-const particleMaterial = new THREE.PointsMaterial({
-  size: parameters.size,
-  vertexColors: true,
+// Create a canvas element for the particle texture
+var particleCanvas = document.createElement('canvas');
+particleCanvas.width = 64;
+particleCanvas.height = 64;
+
+// Get the canvas context
+var particleContext = particleCanvas.getContext('2d');
+
+// Draw a circle on the canvas
+particleContext.beginPath();
+particleContext.arc(32, 32, 30, 0, Math.PI * 2);
+particleContext.fillStyle = '#ffffff';
+particleContext.fill();
+
+// Create a texture from the canvas
+var particleTexture = new THREE.Texture(particleCanvas);
+particleTexture.needsUpdate = true;
+
+// Create a particle material with the texture
+var particleMaterial = new THREE.PointsMaterial({
+	map: particleTexture,
+	size: parameters.size,
+	vertexColors: true,
 });
 
 // Create a particle system
@@ -79,7 +99,6 @@ const animate = function () {
 
   // Rotate the particle system
   particleSystem.rotation.z += parameters.spinSpeed;
-  //renderer.setSize(window.outerWidth, window.innerHeight);
 
   // Render the scene
   renderer.render(scene, camera);

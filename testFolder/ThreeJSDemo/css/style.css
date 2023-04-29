@@ -1,7 +1,33 @@
-html{
-	background-color: black;
+@font-face {
+  font-family: "Roboto Flex";
+  src: url(./RobotoFlex-VariableFont_GRAD\,XTRA\,YOPQ\,YTAS\,YTDE\,YTFI\,YTLC\,YTUC\,opsz\,slnt\,wdth\,wght.ttf) format("truetype");
 }
-
-#canvas{
-	width: 100vw;
+body {
+  background: url(../images/starfield.png);
+  overflow: hidden;
 }
+body .textContainer {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  color: #A2D3FF;
+  font-family: "Roboto Flex", sans-serif;
+}
+body .textContainer h1 {
+  font-size: 10rem;
+  font-variation-settings: "wght" 150, "wdth" 120;
+  transition: all 500ms ease-in-out;
+}
+body .textContainer h1:hover {
+  font-variation-settings: "wght" 250, "wdth" 120;
+  color: #CEA2FF;
+}
+body .textContainer p {
+  color: #A2D3FF;
+  font-size: 1.5rem;
+  font-variation-settings: "wght" 100;
+}/*# sourceMappingURL=style.css.map */
