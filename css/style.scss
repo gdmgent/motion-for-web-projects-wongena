@@ -130,6 +130,21 @@ body{
             opacity: 1;
             transition: opacity 0.3s ease-in-out;
         }
+        .dimensionSelector{
+            z-index: 3;
+            position: absolute;
+            top: 2vh;
+            left: 2vh;
+            display: flex;
+            flex-direction: row;
+            align-items: baselines;
+            font-family: 'Roboto Flex', sans-serif;
+            gap: 5px;
+            p{
+                color: aliceblue;
+                font-size: 1rem
+            }
+        }    
     }
     .links{
         position: relative;
@@ -233,7 +248,7 @@ body{
         }
         .arrow{
             display: none !important;
-        }
+        }   
     }
     .links{
         height: auto !important;
