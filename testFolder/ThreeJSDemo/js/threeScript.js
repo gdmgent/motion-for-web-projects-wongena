@@ -7,7 +7,7 @@ const parameters = {
 	count: 40000,
 	size: 0.008,
 	radius: 5,
-	spinSpeed: 0.00015,
+	spinSpeed: 0.00005,
 	insideColor: "#A2D3FF",
 	outsideColor: "#CEA2FF",
   };

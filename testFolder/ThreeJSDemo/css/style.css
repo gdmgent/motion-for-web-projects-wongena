@@ -4,10 +4,19 @@
 }
 body {
   background: url(../images/starfield.png);
-  overflow: hidden;
 }
-body .textContainer {
-  position: absolute;
+body .scrollContainer {
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+body .scrollContainer section {
+  scroll-snap-align: start;
+  height: 100vh;
+}
+body .scrollContainer .homePage .textContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -17,17 +26,92 @@ body .textContainer {
   color: #A2D3FF;
   font-family: "Roboto Flex", sans-serif;
 }
-body .textContainer h1 {
+body .scrollContainer .homePage .textContainer h1 {
   font-size: 10rem;
   font-variation-settings: "wght" 150, "wdth" 120;
   transition: all 500ms ease-in-out;
+  filter: drop-shadow(0px 0px 10px #000);
 }
-body .textContainer h1:hover {
+body .scrollContainer .homePage .textContainer h1:hover {
   font-variation-settings: "wght" 250, "wdth" 120;
   color: #CEA2FF;
 }
-body .textContainer p {
+body .scrollContainer .homePage .textContainer p {
   color: #A2D3FF;
   font-size: 1.5rem;
   font-variation-settings: "wght" 100;
+}
+body .scrollContainer .homePage .dimensionSelector {
+  position: absolute;
+  top: 2vh;
+  left: 2vh;
+  display: flex;
+  flex-direction: row;
+  align-items: baselines;
+  font-family: "Roboto Flex", sans-serif;
+  gap: 5px;
+}
+body .scrollContainer .homePage .dimensionSelector p {
+  color: aliceblue;
+  font-size: 1rem;
+}
+body .scrollContainer .links {
+  display: flex;
+  flex-direction: column;
+  font-family: "Roboto Flex", sans-serif;
+  padding: 5vh;
+  height: 100vh;
+  font-variation-settings: "wght" 100;
+}
+body .scrollContainer .links h2 {
+  color: #A2D3FF;
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  align-self: center;
+  filter: drop-shadow(0px 0px 10px #000);
+}
+body .scrollContainer .links .allLinks {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 90vh;
+  align-items: center;
+}
+body .scrollContainer .links .allLinks .linkSubSection {
+  width: 20vw;
+}
+body .scrollContainer .links .allLinks .linkSubSection p {
+  color: #A2D3FF;
+  font-size: 2rem;
+  margin-bottom: 0.2rem;
+  filter: drop-shadow(0px 0px 10px #000);
+}
+body .scrollContainer .links .allLinks .linkSubSection .titleDivider {
+  width: 40%;
+  height: 1px;
+  background: linear-gradient(to right, #A2D3FF, #CEA2FF);
+  margin-bottom: 1rem;
+}
+body .scrollContainer .links .allLinks .linkSubSection div {
+  display: flex;
+  flex-direction: column;
+}
+body .scrollContainer .links .allLinks .linkSubSection div a {
+  text-decoration: none;
+  color: aliceblue;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  transition: color 300ms ease-in-out, font-variation-settings 300ms ease-in-out;
+}
+body .scrollContainer .links .allLinks .linkSubSection div a:hover {
+  color: #CEA2FF;
+  font-variation-settings: "wght" 300;
+}
+body #canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
 }/*# sourceMappingURL=style.css.map */
