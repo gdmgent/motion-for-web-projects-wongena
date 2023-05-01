@@ -57,3 +57,8 @@ function animate() {
 }
 
 init();
+
+function onWindowResize () {
+    renderer.setSize (window.innerWidth, window.innerHeight);
+    renderer.setViewport (0, 0, window.innerWidth, window.innerHeight);
+  }
