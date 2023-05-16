@@ -1,0 +1,21 @@
+#woutongena {
+    p {
+        color: red;
+        height: 100vh;
+        &:first-of-type {
+            width: 20vw;
+            padding: 2rem;
+        }
+    }
+
+    h1 {
+        font-family: 'Roboto', sans-serif;
+        font-size: 3rem;
+        font-weight: 400;
+        text-align: center;
+    }
+
+    .sample{
+        height: 100vh;
+    }
+}
