@@ -2,6 +2,7 @@
 #woutongena {
   --discovery-color: #5A6674;
   font-family: "Roboto Flex", sans-serif;
+  overflow-x: hidden;
 }
 #woutongena .box {
   z-index: 2 !important;
@@ -12,6 +13,7 @@
   width: 100%;
   top: 0;
   left: 0;
+  z-index: 2;
 }
 #woutongena .ship-piece {
   position: fixed;
@@ -76,9 +78,34 @@
   justify-content: center;
 }
 #woutongena .sub-title h2 {
+  z-index: 4;
   font-family: "Bruno Ace", cursive;
   mix-blend-mode: exclusion;
   font-size: 3rem;
   color: #C7C7C7;
   text-shadow: 0 0 3px #fff;
+}
+#woutongena .terran-empire {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+#woutongena .terran-empire .iss-charon {
+  position: absolute;
+  width: 60vw;
+  height: 60vh;
+  z-index: 0;
+  background: url(../js/images/ISS_Charon.png) no-repeat center center/cover;
+  opacity: 0;
+}
+#woutongena .terran-empire p {
+  align-self: flex-end;
+  width: 30vw;
+  font-size: 1.25rem;
+  font-family: "Bruno Ace", cursive;
+  color: #0e0e0e;
+  z-index: 1;
+  background-color: rgba(199, 199, 199, 0.7058823529);
+  padding: 10px;
+  margin: 0 30px 30px 0;
 }/*# sourceMappingURL=woutongena.css.map */

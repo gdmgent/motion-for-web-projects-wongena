@@ -59,14 +59,14 @@ function woutongena(fase) {
         y: "+=5vh",
         x: "-=5vw",
         rotation: 60,
-        duration: 0.5,
+        duration: 0.25,
       })
       .to("#woutongena .ship", {
         scale: 0.3,
         x: "-=30vw",
         y: "+=5vh",
         rotation: 60,
-        duration: 1,
+        duration: 0.75,
       })
       .to("#woutongena .ship", {
         y: "+=5vh",
@@ -107,9 +107,18 @@ function woutongena(fase) {
         duration: 0.25,
       } , "exitPortal1")
       .to("#woutongena .spaceBG", {
-        background: "url(./js/images/purple-stars.jpg) no-repeat center center / cover",
+        background: "url(./js/images/red-stars.png) no-repeat center center / cover",
         duration: 0,
       }, "exitPortal1")
+      .to("#woutongena .iss-charon", {
+        opacity: 1,
+        duration: 0,
+      }, "exitPortal1")
+
+      .from("#woutongena .terran-empire p", {
+        x: "+=50vw",
+        opacity: 0,
+      })
 
       .to("#woutongena", {
         duration: 2,
