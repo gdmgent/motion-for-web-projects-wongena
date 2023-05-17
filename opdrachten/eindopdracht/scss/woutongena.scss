@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap');
+
+#woutongena {
+    --discovery-color: #5A6674;
+    font-family: 'Roboto Flex', sans-serif;
+    .box{
+        z-index: 2 !important;
+    }
+
+    .ship{
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+    }
+
+    .ship-piece{
+        position: fixed;
+        z-index: 1;
+    }
+
+    .tail{
+        background: url(../js/images/Tail.png) no-repeat center center / cover;
+        width: 10.5vw;
+        height: 10.5vw;
+        left: calc(50vw - 5.25vw);
+        top: calc(56vh - 5.25vw);
+        opacity: 0;
+        transform: scale(0.5);
+        transform-origin: bottom;
+    }
+
+    .engine{
+        background: url(../js/images/engine-1.png) no-repeat center center / cover;
+        width: 1vw;
+        height: 20vw;
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    .engine-1{
+        left: calc(50vw - 6.25vw);
+        top: calc(50vh - 15vw);
+        transform-origin: left;
+    }
+
+    .engine-2{
+        left: calc(50vw + 5.25vw);
+        top: calc(50vh - 15vw);
+        transform-origin: left;
+    }
+
+    .particle{
+        background: url(../js/images/lightning.png) no-repeat center center / cover;
+        width: 60vw;
+        height: 40vw;
+        top: calc(50vh - 10vw);
+        left: calc(50vw - 30vw);
+        rotate: 90deg;
+        z-index: 2;
+        opacity: 0;
+        filter: invert(100%);
+    }
+
+    .spaceBG{
+        background-image: url(../js/images/stars.jpg);
+        z-index: -1;
+        height: 100vh;
+    }
+
+    .intro{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img{
+            width: 40vw;
+            object-fit: cover;
+            z-index: 3;
+        }
+    }
+
+    .sub-title{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        h2{
+            font-family: 'Bruno Ace', cursive;
+            mix-blend-mode: exclusion;
+            font-size: 3rem;
+            color: #C7C7C7;
+            text-shadow: 0 0 3px #fff;
+        }
+    }
+}
