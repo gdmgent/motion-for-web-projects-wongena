@@ -4,7 +4,7 @@
     --discovery-color: #5A6674;
     font-family: 'Roboto Flex', sans-serif;
     .box{
-        z-index: -1;
+        z-index: 2 !important;
     }
 
     .ship{
@@ -51,6 +51,18 @@
         transform-origin: left;
     }
 
+    .particle{
+        background: url(../js/images/lightning.png) no-repeat center center / cover;
+        width: 60vw;
+        height: 40vw;
+        top: calc(50vh - 10vw);
+        left: calc(50vw - 30vw);
+        rotate: 90deg;
+        z-index: 2;
+        opacity: 0;
+        filter: invert(100%);
+    }
+
     .spaceBG{
         background-image: url(../js/images/stars.jpg);
         z-index: -1;
@@ -64,7 +76,7 @@
         img{
             width: 40vw;
             object-fit: cover;
-            z-index: 2;
+            z-index: 3;
         }
     }
 

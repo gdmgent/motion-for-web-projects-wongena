@@ -49,12 +49,72 @@ function woutongena(fase) {
         scale: 0.75,
       })
       .to("#woutongena .ship", {
-        y: "-=10vh",
+        y: "-=30vh",
         scale: 0.4,
       })
       .to("#woutongena", {
         duration: 2,
       })
+      .to("#woutongena .ship", {
+        y: "+=5vh",
+        x: "-=5vw",
+        rotation: 60,
+        duration: 0.5,
+      })
+      .to("#woutongena .ship", {
+        scale: 0.3,
+        x: "-=30vw",
+        y: "+=5vh",
+        rotation: 60,
+        duration: 1,
+      })
+      .to("#woutongena .ship", {
+        y: "+=5vh",
+        rotation: 0,
+        duration: 0.5,
+      })
+
+      .add("enterPortal1")
+      .to("#woutongena .ship", {
+        rotateY: 90,
+        scale: 0.2,
+      } , "enterPortal1")
+      .to("#woutongena .ship", {
+        filter: "blur(20px)",
+        filter: "drop-shadow(0px 0px 30px red) invert(100%)",
+        duration: 0.25,
+      } , "enterPortal1")
+      .to("#woutongena .particle", {
+        opacity: 1,
+        duration: 0.25,
+      } , "enterPortal1")
+      .to("#woutongena .box", {
+        rotateZ: 360,
+      } , "enterPortal1")
+
+      .add("exitPortal1")
+      .to("#woutongena .ship", {
+        rotateY: 0,
+        scale: 0.3,
+        filter: "blur(0px)",
+      } , "exitPortal1")
+      .to("#woutongena .box", {
+        rotateZ: 0,
+      } , "exitPortal1")
+      .to("#woutongena .particle", {
+        filter: "invert(0%)",
+        opacity: 0,
+        duration: 0.25,
+      } , "exitPortal1")
+      .to("#woutongena .spaceBG", {
+        background: "url(./js/images/purple-stars.jpg) no-repeat center center / cover",
+        duration: 0,
+      }, "exitPortal1")
+
+      .to("#woutongena", {
+        duration: 2,
+      })
+
       .add("end")
       .to(
         "#woutongena .ship-piece",
@@ -74,6 +134,7 @@ function woutongena(fase) {
           width: "20vw",
           height: "20vw",
           duration: 0.25,
+          opacity: 1,
         },
         "end"
       );

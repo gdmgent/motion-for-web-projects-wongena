@@ -4,7 +4,7 @@
   font-family: "Roboto Flex", sans-serif;
 }
 #woutongena .box {
-  z-index: -1;
+  z-index: 2 !important;
 }
 #woutongena .ship {
   position: fixed;
@@ -44,6 +44,17 @@
   top: calc(50vh - 15vw);
   transform-origin: left;
 }
+#woutongena .particle {
+  background: url(../js/images/lightning.png) no-repeat center center/cover;
+  width: 60vw;
+  height: 40vw;
+  top: calc(50vh - 10vw);
+  left: 20vw;
+  rotate: 90deg;
+  z-index: 2;
+  opacity: 0;
+  filter: invert(100%);
+}
 #woutongena .spaceBG {
   background-image: url(../js/images/stars.jpg);
   z-index: -1;
@@ -57,7 +68,7 @@
 #woutongena .intro img {
   width: 40vw;
   object-fit: cover;
-  z-index: 2;
+  z-index: 3;
 }
 #woutongena .sub-title {
   display: flex;
