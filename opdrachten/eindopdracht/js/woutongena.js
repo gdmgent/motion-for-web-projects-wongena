@@ -176,6 +176,10 @@ function woutongena(fase) {
         backgroundSize: "100% 100%",
         duration: 0,
       }, "exitPortal2")
+      .to("#woutongena .spaceBG", {
+        background: "url(./js/images/stars.jpg) no-repeat center center / cover",
+        duration: 0,
+      }, "exitPortal2")
 
       .add("returnToCenter")
       .to("#woutongena .ship", {
@@ -209,13 +213,13 @@ function woutongena(fase) {
         duration: 0.5,
       })
 
-      .to("#woutongena", {
-        duration: 2,
-      })
-
       .to("#woutongena .galactic-barrier", {
         opacity: 0,
         duration: 0,
+      })
+
+      .to("#woutongena", {
+        duration: 2,
       })
 
       .add("end")
@@ -223,23 +227,40 @@ function woutongena(fase) {
         "#woutongena .ship-piece",
         {
           opacity: 0,
-          duration: 0.25,
+          duration: 0.1
         },
         "end"
       )
+      .to("#woutongena .ship", {
+        scale: 1,
+        y: "0vh",
+        x: "0vw",
+        rotation: 0,
+        rotateX: 0,
+        duration: 0.5,
+      }, "end")
       .to(
         "#woutongena .box",
         {
           borderRadius: "0%",
           backgroundColor: "white",
           left: "40vw",
-          top: "calc(60vh - 10vw)",
+          top: "calc(60vh - 15vw)",
           width: "20vw",
           height: "20vw",
           duration: 0.25,
           opacity: 1,
         },
         "end"
-      );
+      )
+      .to("#woutongena .box", {
+        background: "none",
+        backgroundColor: "white",
+        duration: 0,
+      }, "end")
+
+      .to("#woutongena", {
+        duration: 0.01,
+      });
   }
 }

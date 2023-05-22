@@ -119,6 +119,9 @@
   position: fixed;
   opacity: 0;
 }
+#woutongena .empty-div {
+  height: 100vh;
+}
 @keyframes floatingShip {
   0% {
     transform: translateY(0) translateX(0);
