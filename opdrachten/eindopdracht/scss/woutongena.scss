@@ -108,6 +108,7 @@
             z-index: 0;
             background: url(../js/images/ISS_Charon.png) no-repeat center center / cover;
             opacity: 0;
+            animation: floatingShip 10s ease-in-out infinite alternate;
         }
         p{
             align-self: flex-end;
@@ -119,6 +120,25 @@
             background-color: #c7c7c7b4;
             padding: 10px;
             margin: 0 30px 30px 0;
+        }
+    }
+
+    .galactic-barrier{
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        background: url(../js/images/galactic-barrier.png) no-repeat center center / cover;
+        position: fixed;
+        opacity: 0;
+    }
+
+    @keyframes floatingShip {
+        0% {
+            transform: translateY(0) translateX(0);
+        }
+        100% {
+            transform: translateY(-10px) translateX(15px);
         }
     }
 }
