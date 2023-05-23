@@ -9,6 +9,21 @@
         z-index: 2 !important;
     }
 
+    .title-w-box{
+        align-self: flex-end;
+        top: -10vh;
+        width: 20vw;
+        font-size: 2rem;
+        font-family: 'Bruno Ace', cursive;
+        color: #0e0e0e;
+        z-index: 1;
+        background-color: #c7c7c7b4;
+        padding: 20px;
+        border-radius: 10px;
+        margin: 0 30px 30px 0;
+        text-align: center;
+    }
+
     .ship{
         position: fixed;
         height: 100%;
@@ -110,17 +125,6 @@
             opacity: 0;
             animation: floatingShip 10s ease-in-out infinite alternate;
         }
-        p{
-            align-self: flex-end;
-            width: 30vw;
-            font-size: 1.25rem;
-            font-family: 'Bruno Ace', cursive;
-            color: #0e0e0e;
-            z-index: 1;
-            background-color: #c7c7c7b4;
-            padding: 10px;
-            margin: 0 30px 30px 0;
-        }
     }
 
     .galactic-barrier{
@@ -131,10 +135,37 @@
         background: url(../js/images/galactic-barrier.png) no-repeat center center / cover;
         position: fixed;
         opacity: 0;
+        display: flex;
+
+        .title-w-box{
+            align-self: flex-start;
+            margin: 5vh 0 0 5vw;
+        }
     }
 
     .empty-div{
         height: 100vh;
+    }
+
+    .C-10-homeplanet{
+        width: 50vh;
+        height: 50vh;
+        position: fixed;
+        rotate: 15deg;
+        top: 100vh;
+        left: 10vw;
+        background: url(../js/images/C10PlanetTexture.png);
+        background-size: 400% 100%;
+        border-radius: 50%;
+        animation: movePlanet 200s linear infinite;
+        box-shadow: 0 0 100px #9a6008;
+        opacity: 0;
+
+        .title-w-box{
+            rotate: -15deg;
+            width: 30vw;
+            transform: translateX(15vw) translateY(-13vh);
+        }
     }
 
     @keyframes floatingShip {
@@ -143,6 +174,15 @@
         }
         100% {
             transform: translateY(-10px) translateX(15px);
+        }
+    }
+
+    @keyframes movePlanet{
+        0% {
+            background-position: 200% 0%;
+        }
+        100% {
+            background-position: 0% 0%;
         }
     }
 }

@@ -115,7 +115,7 @@ function woutongena(fase) {
         duration: 0,
       }, "exitPortal1")
 
-      .from("#woutongena .terran-empire p", {
+      .from("#woutongena .terran-empire h2", {
         x: "+=50vw",
         opacity: 0,
       })
@@ -192,6 +192,10 @@ function woutongena(fase) {
         backgroundSize: "105% 105%",
         duration: 2,
       }, "returnToCenter")
+      .from("#woutongena .galactic-barrier h2", {
+        opacity: 0,
+        duration: 2,
+      }, "returnToCenter")
 
       .to("#woutongena", {
         duration: 0.5,
@@ -213,10 +217,42 @@ function woutongena(fase) {
         duration: 0.5,
       })
 
+      .add("exitGalaxy")
       .to("#woutongena .galactic-barrier", {
         opacity: 0,
         duration: 0,
+      }, "exitGalaxy")
+      .to("#woutongena .spaceBG", {
+        background: "url(./js/images/empty-space.png) no-repeat center center / cover",
+        duration: 0,
+      }, "exitGalaxy")
+
+      .to("#woutongena .ship", {
+        y: "0vh",
+        x: "0vw",
+        rotation: 0,
+        rotateX: 0,
+        duration: 0,
       })
+
+      .to("#woutongena .ship", {
+        scale: 0.5,
+        y: "0vh",
+        x: "0vw",
+        rotation: 0,
+        rotateX: 0,
+        duration: 1,
+      })
+
+      .to("#woutongena .C-10-homeplanet", {
+        opacity: 1,
+        duration: 0,
+      })
+      .to("#woutongena .C-10-homeplanet", {
+        y: "-=155vh",
+        duration: 3,
+      })
+        
 
       .to("#woutongena", {
         duration: 2,
