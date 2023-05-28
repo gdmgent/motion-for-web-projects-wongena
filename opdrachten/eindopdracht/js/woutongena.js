@@ -115,7 +115,7 @@ function woutongena(fase) {
         duration: 0,
       }, "exitPortal1")
 
-      .from("#woutongena .terran-empire h2", {
+      .from("#woutongena .terran-empire .title-w-box", {
         x: "+=50vw",
         opacity: 0,
       })
@@ -192,8 +192,8 @@ function woutongena(fase) {
         backgroundSize: "105% 105%",
         duration: 2,
       }, "returnToCenter")
-      .from("#woutongena .galactic-barrier h2", {
-        opacity: 0,
+      .to("#woutongena .galactic-barrier .title-w-box", {
+        opacity: 1,
         duration: 2,
       }, "returnToCenter")
 
@@ -248,14 +248,23 @@ function woutongena(fase) {
         opacity: 1,
         duration: 0,
       })
+      .add("movePlanet")
       .to("#woutongena .C-10-homeplanet", {
-        y: "-=155vh",
+        y: "-=160vh",
         duration: 3,
-      })
+      }, "movePlanet")
+      .to("#woutongena .C-10-homeplanet .title-w-box", {
+        opacity: 1,
+      }, "movePlanet")
         
 
       .to("#woutongena", {
         duration: 2,
+      })
+
+      .to("#woutongena .spaceBG", {
+        opacity: 0,
+        duration: 0.5,
       })
 
       .add("end")
@@ -294,9 +303,5 @@ function woutongena(fase) {
         backgroundColor: "white",
         duration: 0,
       }, "end")
-
-      .to("#woutongena", {
-        duration: 0.01,
-      });
   }
 }
