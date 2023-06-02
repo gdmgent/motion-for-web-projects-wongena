@@ -3,8 +3,28 @@
 #woutongena {
     --discovery-color: #5A6674;
     font-family: 'Roboto Flex', sans-serif;
+    overflow-x: hidden;
+
     .box{
         z-index: 2 !important;
+    }
+
+    .title-w-box{
+        align-self: flex-end;
+        top: -10vh;
+        width: 30vw;
+        font-size: 1.5rem;
+        font-family: 'Bruno Ace', cursive;
+        color: #0e0e0e;
+        z-index: 4;
+        background-color: #c7c7c7b4;
+        padding: 20px;
+        border-radius: 10px;
+        margin: 0 30px 30px 0;
+        text-align: center;
+        p{
+            font-size: 1rem;
+        }
     }
 
     .ship{
@@ -13,6 +33,7 @@
         width: 100%;
         top: 0;
         left: 0;
+        z-index: 2;
     }
 
     .ship-piece{
@@ -85,11 +106,105 @@
         align-items: center;
         justify-content: center;
         h2{
+            z-index: 4;
             font-family: 'Bruno Ace', cursive;
             mix-blend-mode: exclusion;
             font-size: 3rem;
             color: #C7C7C7;
             text-shadow: 0 0 3px #fff;
+        }
+    }
+
+    .terran-empire{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        .iss-charon{
+            position: absolute;
+            width: 60vw;
+            height: 60vh;
+            z-index: 0;
+            background: url(../js/images/ISS_Charon.png) no-repeat center center / cover;
+            opacity: 0;
+            animation: floatingShip 10s ease-in-out infinite alternate;
+        }
+    }
+
+    .galactic-barrier{
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        background: url(../js/images/galactic-barrier.png) no-repeat center center / cover;
+        position: fixed;
+        opacity: 0;
+        display: flex;
+
+        .title-w-box{
+            align-self: flex-start;
+            margin: 5vh 0 0 5vw;
+            opacity: 0;
+        }
+    }
+
+    .empty-div{
+        height: 100vh;
+    }
+
+    .C-10-homeplanet{
+        width: 50vh;
+        height: 50vh;
+        position: fixed;
+        rotate: 15deg;
+        top: 100vh;
+        left: 10vw;
+        background: url(../js/images/C10PlanetTexture.png);
+        background-size: 400% 100%;
+        border-radius: 50%;
+        animation: movePlanet 200s linear infinite;
+        box-shadow: 0 0 100px #9a6008;
+        opacity: 0;
+
+        .title-w-box{
+            position: absolute;
+            rotate: -15deg;
+            width: 35vw;
+            transform: translateX(17vw) translateY(-30vh);
+            opacity: 0;
+        }
+    }
+
+    .end-credits{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        p{
+            z-index: 4;
+            font-family: 'Bruno Ace', cursive;
+            mix-blend-mode: exclusion;
+            font-size: 4rem;
+            color: #C7C7C7;
+            text-shadow: 0 0 3px #fff;
+        }
+    }
+
+    @keyframes floatingShip {
+        0% {
+            transform: translateY(0) translateX(0);
+        }
+        100% {
+            transform: translateY(-10px) translateX(15px);
+        }
+    }
+
+    @keyframes movePlanet{
+        0% {
+            background-position: 200% 0%;
+        }
+        100% {
+            background-position: 0% 0%;
         }
     }
 }
