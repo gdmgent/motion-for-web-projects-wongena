@@ -56,20 +56,21 @@ function woutongena(fase) {
         duration: 2,
       })
       .to("#woutongena .ship", {
-        y: "+=5vh",
-        x: "-=5vw",
+        y: "+=10vh",
+        x: "-=10vw",
         rotation: 60,
-        duration: 0.25,
+        duration: 0.5,
       })
       .to("#woutongena .ship", {
         scale: 0.3,
-        x: "-=30vw",
+        x: "-=25vw",
         y: "+=5vh",
         rotation: 60,
         duration: 0.75,
       })
       .to("#woutongena .ship", {
         y: "+=5vh",
+        x: "-=5vw",
         rotation: 0,
         duration: 0.5,
       })
@@ -121,21 +122,21 @@ function woutongena(fase) {
       })
 
       .to("#woutongena .ship", {
-        y: "+=5vh",
-        x: "+=5vw",
+        y: "+=10vh",
+        x: "+=10vw",
         rotation: -60,
-        duration: 0.25,
+        duration: 0.5,
       })
       .to("#woutongena .ship", {
         x: "+=60vw",
-        y: "+=20vh",
+        y: "+=15vh",
         duration: 2,
       })
       .to("#woutongena .ship", {
         x: "+=5vw",
-        y: "+=5vh",
+        y: "+=10vh",
         rotation: 0,
-        duration: 0.25,
+        duration: 0.5,
       })
 
       .add("enterPortal2")
